@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adobe AEM WCMmode toggle</title>
+  <link rel="stylesheet" type="text/css" href="//yegor256.github.io/tacit/tacit.min.css"/>
+</head>
+<body>
+
+  <section>
+    <p>This snippet lets you toggle the <code>wcmmode</code> parameter on Adobe AEM applications. If the parameter is present, it will be removed completely. If it is not present, it will be added with the value <code>disabled</code>.</p>
+    <p>You can use it as a bookmarklet by dragging the link below to your bookmarks bar:</p>
+    <a style="font-size: 2em; text-align: center; display: block;" href='javascript:require([http://cdn.rawgit.com/ryanburnette/Qurl/master/qurl.js"],function(){var url=Qurl.create();if("wcmmode"in url.query()){url.query("wcmmode",false)}else{url.query("wcmmode","disabled");location.reload()}});'>drag me</a>
+  </section>
+
+
+  <section>
+    <h2>Source Code</h2>
+    <pre>require(["http://cdn.rawgit.com/ryanburnette/Qurl/master/qurl.js"], function() {
+  var url = Qurl.create();
+  if ("wcmmode" in url.query()) {
+    // wcmmode exists, remove it
+    url.query("wcmmode", false);
+  } else {
+    // default new wcmmode is disabled
+    url.query("wcmmode", "disabled");
+    location.reload();
+  }
+});</pre>
+  </section>
+
+</body>
+</html>
