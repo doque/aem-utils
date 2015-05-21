@@ -6,6 +6,6 @@ require(["http://cdn.rawgit.com/ryanburnette/Qurl/master/qurl.js"], function() {
   } else {
     // default new wcmmode is disabled
     url.query("wcmmode", "disabled");
-    location.reload();
   }
+  location.reload();
 });
